@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Квіз з Програмування</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/components/quiz-panel.css">
+    <link rel="stylesheet" href="src/css/components/level-info.css">
+    <link rel="stylesheet" href="src/css/components/help-section.css">
+    <link rel="stylesheet" href="src/css/components/loading-screen.css">
+    <link rel="stylesheet" href="src/css/components/game-over.css">
+    <link rel="stylesheet" href="src/css/animations.css">
+</head>
+<body>
+    <div class="loadingScreen" id="loader">
+        <div class="binaryBg" id="binaryBackground"></div>
+        <div class="loadBar">
+            <div class="loadProgress" id="progressBar"></div>
+        </div>
+        <div class="loadText" id="loadingText">Завантаження... 0%</div>
+    </div>
+
+    <div id="mainCanvas"></div>
+    
+    <div class="levelInfo">
+        <h3>🎯 Прогрес квізу</h3>
+        <div class="levelBar">
+            <div class="levelBox active" id="level1">Рівень 1<br><small>Базовий</small></div>
+            <div class="levelBox blocked" id="level2">Рівень 2<br><small>Складний</small></div>
+            <div class="levelBox blocked" id="level3">Рівень 3<br><small>Експертний</small></div>
+        </div>
+        <div class="progressInfo" id="levelProgress">
+            Рівень 1: 0/3 питань
+        </div>
+    </div>
+
+    <div class="helpSection">
+        <div class="helpBtn" id="helpButton">Допомога</div>
+        <div class="helpBox open" id="helpPanel">
+            <h3>🎮 Як грати</h3>
+            <ul>
+                <li>Проходьте рівні по порядку</li>
+                <li>Прокручуйте вниз для руху</li>
+                <li>Рухайте мишею для огляду</li>
+                <li>Клікайте зелені кнопки для відповіді</li>
+                <li>⚠️ Одна помилка = блокування наступного рівня!</li>
+                <li>Правильні відповіді стають зеленими ✓</li>
+                <li>Неправильні відповіді стають червоними ✗</li>
+            </ul>
+            <button class="okBtn" id="okButton">Зрозуміло</button>
+        </div>
+    </div>
+
+    <div class="gameOverBox" id="gameOverModal">
+        <h2>❌ Рівень провалено!</h2>
+        <p>Ви дали неправильну відповідь.</p>
+        <p>Наступні рівні заблоковано.</p>
+        <button class="restartBtn" id="restartButton">Почати спочатку</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/js/data/quiz-data.js"></script>
+    <script src="src/js/modules/scene-setup.js"></script>
+    <script src="src/js/modules/background.js"></script>
+    <script src="src/js/modules/digits.js"></script>
+    <script src="src/js/modules/quiz-boards.js"></script>
+    <script src="src/js/modules/game-logic.js"></script>
+    <script src="src/js/modules/interactions.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>

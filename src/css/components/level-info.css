@@ -1,0 +1,59 @@
+/* Level Info Component */
+
+.levelInfo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    font-family: 'Courier New', monospace;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 15px;
+    color: #00ff00;
+}
+
+.levelInfo h3 {
+    margin: 0 0 10px 0;
+    color: #00ffff;
+    text-align: center;
+}
+
+.levelBar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.levelBox {
+    padding: 8px 12px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    min-width: 60px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.levelBox.active {
+    background: rgba(0, 255, 0, 0.3);
+    border-color: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.levelBox.completed {
+    background: rgba(0, 255, 0, 0.6);
+    border-color: #00ff00;
+    color: #000;
+}
+
+.levelBox.blocked {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.progressInfo {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
